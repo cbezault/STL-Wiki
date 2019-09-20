@@ -1,5 +1,5 @@
 # September
-- [ ] Announce this repo at [CppCon 2019](https://cppcon.org/).
+- [x] Announce this repo at [CppCon 2019](https://cppcon.org/).
 - [x] Add initial documentation: readme, license, and roadmap.
 - [x] Add initial CMake build scripts for Desktop-only msvcp.
 - [ ] Investigate test harness solutions, either building our own to more closely match the internal system in a reasonable way, or using libcxx's `lit`.
