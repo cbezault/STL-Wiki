@@ -14,3 +14,34 @@ Steps taken to set up a build machine. These are how @BillyONeal set up bion-tr-
 * Download Ninja from https://ninja-build.org/ and copy ninja.exe to CMake's bin directory C:\Program Files\CMake\bin. (This will put it on the PATH under the same entry CMake's installer created)
 * Install LLVM 9.0.0 from https://releases.llvm.org/download.html, choose the "Add to PATH for all users" option in the installer. (Note: we test with 9.0.0 because that's what is going to be bundled with Visual Studio soon as of 2019-10-24)
 * Follow the instructions at https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-windows?view=azure-devops to install the agent. On bion-tr-gh-1 the agent is installed to `C:\agent`. Install the agent as a service that runs as NETWORK SERVICE.
+
+```
+PS C:\> .\config.cmd
+
+>> Connect:
+
+Enter server URL > https://dev.azure.com/vclibs/
+Enter authentication type (press enter for PAT) >
+Enter personal access token > ****************************************************
+Connecting to server ...
+
+>> Register Agent:
+
+Enter agent pool (press enter for default) > STL
+Enter agent name (press enter for BION-TR-GH-1) >
+Scanning for tool capabilities.
+Connecting to the server.
+Successfully added the agent
+Testing agent connection.
+Enter work folder (press enter for _work) >
+2019-10-24 23:21:31Z: Settings Saved.
+Enter run agent as service? (Y/N) (press enter for N) > y
+Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) >
+Granting file permissions to 'NT AUTHORITY\NETWORK SERVICE'.
+Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully installed
+Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully set recovery option
+Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully set to delayed auto start
+Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully configured
+Service vstsagent.vclibs.STL.BION-TR-GH-1 started successfully
+PS C:\>
+```
