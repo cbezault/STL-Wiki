@@ -1,4 +1,4 @@
-Steps taken to set up a build machine. These are how @BillyONeal set up bion-x299-gh:
+Steps taken to set up a build machine. These are how @BillyONeal set up bion-tr-gh-1:
 
 * Install Windows Server 2019, updates, and drivers. (Or use a VM from Azure)
 * If not using a VM from Azure, set the machine name to something reasonable.
