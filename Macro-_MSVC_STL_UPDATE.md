@@ -4,13 +4,13 @@ Here are the historical values of this macro, verified from actual installations
 
 Toolset Version | Visual Studio | `_MSVC_STL_UPDATE`
 -----:|:-----|:-----
-19.11 and earlier | (earlier) | none
-19.12 | Visual Studio 2017 version 15.5 | `201709`
-19.13 | Visual Studio 2017 version 15.6 | `201711`
-19.14 | Visual Studio 2017 version 15.7 | `201803`
-19.15 | Visual Studio 2017 version 15.8 | `201806L`
-19.16 | Visual Studio 2017 version 15.9 | `201809L`
-19.20 | Visual Studio 2019 RTW (16.0) | `201811L`
-19.21 | Visual Studio 2019 version 16.1 | `201903L`
-19.22 | Visual Studio 2019 version 16.2 | `201905L`
-19.23 | Visual Studio 2019 version 16.3 | `201906L`
+19.11 and earlier | earlier | none
+19.12 | VS 2017 15.5 | `201709`
+19.13 | VS 2017 15.6 | `201711`
+19.14 | VS 2017 15.7 | `201803`
+19.15 | VS 2017 15.8 | `201806L`
+19.16 | VS 2017 15.9 | `201809L`
+19.20 | VS 2019 16.0 | `201811L`
+19.21 | VS 2019 16.1 | `201903L`
+19.22 | VS 2019 16.2 | `201905L`
+19.23 | VS 2019 16.3 | `201906L`
