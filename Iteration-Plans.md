@@ -25,6 +25,8 @@
 - [ ] `devcrt` test suite running in PRs.
 - [ ] `tr1` test suite running in PRs.
 - [x] Merged C++20 features:
+  - P0340R3 [#284](https://github.com/microsoft/STL/pull/284) SFINAE-Friendly `underlying_type`
+  - P0631R8 [#261](https://github.com/microsoft/STL/pull/261) `<numbers>` Math Constants
   - P0738R2 [#246](https://github.com/microsoft/STL/pull/246) `istream_iterator` Cleanup
   - P1209R0 [#236](https://github.com/microsoft/STL/pull/236) `erase_if()`, `erase()`
 
