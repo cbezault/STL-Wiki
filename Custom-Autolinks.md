@@ -14,4 +14,4 @@ Note that GitHub's custom autolink syntax doesn't support R-numbered revisions, 
 
 # Microsoft-internal
 
-We also have custom autolinks to Microsoft-internal bug databases, like VSO-&lt;num&gt;, OS-&lt;num&gt;, and ArchivedOS-&lt;num&gt;.
+We also have custom autolinks to Microsoft-internal bugs and pull requests, like VSO-&lt;num&gt;, MSVC-PR-&lt;num&gt;, OS-&lt;num&gt;, and ArchivedOS-&lt;num&gt;.
