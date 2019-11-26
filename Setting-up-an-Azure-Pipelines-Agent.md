@@ -9,7 +9,7 @@ Steps taken to set up a build machine. These are how @BillyONeal set up bion-tr-
         * C++/CLI Support for v142 Build Tools
     * (go to Individual Components)
         * ARM and ARM64 build tools for the same compiler version.
-    * It is recommended that you don't install anything else; in particular you MUST NOT install the Just In Time Debugger as it can cause tests to hang.
+    * It is recommended that you don't install anything else; in particular you MUST NOT install the Just In Time Debugger as it can cause tests to hang. (When they fail they try to start the Just In Time Debugger, which is great when you're at the machine in person but these machines run unattended.)
 * Install CMake 3.15.4 from https://cmake.org/download/, choose the "Add to PATH for all users" option in the installer.
 * Download Ninja from https://ninja-build.org/ and copy ninja.exe to CMake's bin directory C:\Program Files\CMake\bin. (This will put it on the PATH under the same entry CMake's installer created)
 * Install LLVM 9.0.0 from https://releases.llvm.org/download.html, choose the "Add to PATH for all users" option in the installer. (Note: we test with 9.0.0 because that's what is going to be bundled with Visual Studio soon as of 2019-10-24)
