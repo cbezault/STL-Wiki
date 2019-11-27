@@ -23,7 +23,7 @@ $ReleaseInPath = 'Preview'
 $Sku = 'Enterprise'
 $VSBootstrapperURL = 'https://aka.ms/vs/16/pre/vs_buildtools.exe'
 $CMakeURL = 'https://github.com/Kitware/CMake/releases/download/v3.16.0/cmake-3.16.0-win64-x64.msi'
-$LlvmURL = 'http://releases.llvm.org/9.0.0/LLVM-9.0.0-win64.exe'
+$LlvmURL = 'https://releases.llvm.org/9.0.0/LLVM-9.0.0-win64.exe'
 $NinjaURL = 'https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip'
 $VstsAgentURL = 'https://vstsagentpackage.azureedge.net/agent/2.160.1/vsts-agent-win-x64-2.160.1.zip'
 
