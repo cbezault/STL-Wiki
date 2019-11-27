@@ -1,47 +1,176 @@
-Steps taken to set up a build machine. These are how @BillyONeal set up bion-tr-gh-1:
+Steps taken to set up a build machine. These are how @BillyONeal set up our agents:
 
-* Install Windows Server 2019, updates, and drivers. (Or use a VM from Azure)
-* If not using a VM from Azure, set the machine name to something reasonable.
-* Install the "C++ Desktop" workload for Visual Studio 2019 Version 16.4 Preview 2 (or later) from https://visualstudio.microsoft.com/vs/preview/
-    * Desktop Workload
-        * MSVC v142 tools
-        * Windows SDK 10.0.18362
-        * C++/CLI Support for v142 Build Tools
-    * (go to Individual Components)
-        * ARM and ARM64 build tools for the same compiler version.
-    * It is recommended that you don't install anything else; in particular you MUST NOT install the Just In Time Debugger as it can cause tests to hang. (When they fail they try to start the Just In Time Debugger, which is great when you're at the machine in person but these machines run unattended.)
-* Install CMake 3.15.4 from https://cmake.org/download/, choose the "Add to PATH for all users" option in the installer.
-* Download Ninja from https://ninja-build.org/ and copy ninja.exe to CMake's bin directory C:\Program Files\CMake\bin. (This will put it on the PATH under the same entry CMake's installer created)
-* Install LLVM 9.0.0 from https://releases.llvm.org/download.html, choose the "Add to PATH for all users" option in the installer. (Note: we test with 9.0.0 because that's what is going to be bundled with Visual Studio soon as of 2019-10-24)
-* Follow the instructions at https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-windows?view=azure-devops to install the agent. On bion-tr-gh-1 the agent is installed to `C:\agent`. Install the agent as a service that runs as NETWORK SERVICE.
+* Get an Azure VM created. The current build agents are `B8ms` sized machines.
+* Log in and create a powershell script with the following content:
 
 ```
-PS C:\> .\config.cmd
+# Copyright (c) Microsoft Corporation.
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
->> Connect:
+# Sets up VM for use as a build machine
 
-Enter server URL > https://dev.azure.com/vclibs/
-Enter authentication type (press enter for PAT) >
-Enter personal access token > ****************************************************
-Connecting to server ...
+$AzureDevOpsURL = 'https://dev.azure.com/vclibs/'
+$AzureDevOpsPool = 'STL'
+$PersonalAccessToken = 'CHANGE THIS'
 
->> Register Agent:
+$WorkLoads =  '--add Microsoft.VisualStudio.Component.VC.CLI.Support ' + `
+              '--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 ' + `
+              '--add Microsoft.VisualStudio.Component.VC.Tools.ARM64 ' + `
+              '--add Microsoft.VisualStudio.Component.VC.Tools.ARM ' + `
+              '--add Microsoft.VisualStudio.Component.Windows10SDK.18362 '
 
-Enter agent pool (press enter for default) > STL
-Enter agent name (press enter for BION-TR-GH-1) >
-Scanning for tool capabilities.
-Connecting to the server.
-Successfully added the agent
-Testing agent connection.
-Enter work folder (press enter for _work) >
-2019-10-24 23:21:31Z: Settings Saved.
-Enter run agent as service? (Y/N) (press enter for N) > y
-Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) >
-Granting file permissions to 'NT AUTHORITY\NETWORK SERVICE'.
-Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully installed
-Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully set recovery option
-Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully set to delayed auto start
-Service vstsagent.vclibs.STL.BION-TR-GH-1 successfully configured
-Service vstsagent.vclibs.STL.BION-TR-GH-1 started successfully
-PS C:\>
+$ReleaseInPath = 'Preview'
+$Sku = 'Enterprise'
+$VSBootstrapperURL = 'https://aka.ms/vs/16/pre/vs_buildtools.exe'
+$CMakeURL = 'https://github.com/Kitware/CMake/releases/download/v3.16.0/cmake-3.16.0-win64-x64.msi'
+$LlvmURL = 'http://releases.llvm.org/9.0.0/LLVM-9.0.0-win64.exe'
+$NinjaURL = 'https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip'
+$VstsAgentURL = 'https://vstsagentpackage.azureedge.net/agent/2.160.1/vsts-agent-win-x64-2.160.1.zip'
+
+$ErrorActionPreference = "Stop"
+
+Function InstallVS
+{
+  Param(
+    [String]$WorkLoads,
+    [String]$Sku,
+    [String]$VSBootstrapperURL)
+  $exitCode = -1
+  try
+  {
+    Write-Host "Downloading VS bootstrapper ..."
+    [string]$bootstrapperExe = Join-Path ${env:Temp} ([System.IO.Path]::GetRandomFileName() + ".exe")
+    Invoke-WebRequest -Uri $VSBootstrapperURL -OutFile $bootstrapperExe
+
+    $Arguments = ('/c', $bootstrapperExe, $WorkLoads, '--quiet', '--norestart', '--wait', '--nocache')
+
+    Write-Host "Starting Install: $Arguments"
+    $process = Start-Process -FilePath cmd.exe -ArgumentList $Arguments -Wait -PassThru
+    $exitCode = $process.ExitCode
+
+    if ($exitCode -eq 0 -or $exitCode -eq 3010)
+    {
+        Write-Host -Object 'Installation successful!'
+    }
+    else
+    {
+        Write-Host -Object "Nonzero exit code returned by the installation process : $exitCode."
+        exit $exitCode
+    }
+  }
+  catch
+  {
+    Write-Host -Object "Failed to install Visual Studio!"
+    Write-Host -Object $_.Exception.Message
+    exit $exitCode
+  }
+}
+
+Function InstallMSI
+{
+    Param(
+        [String]$Name,
+        [String]$Uri
+    )
+
+    try
+    {
+        Write-Host "Downloading $Name..."
+        [string]$randomRoot = Join-Path ${env:Temp} ([System.IO.Path]::GetRandomFileName())
+        [string]$msiPath = $randomRoot + '.msi'
+        [string]$msiExecPath = 'msiexec.exe'
+        $args = @('/i', $msiPath, '/norestart', '/quiet', '/qn')
+
+        Invoke-WebRequest -Uri $Uri -OutFile $msiPath
+        Write-Host "Installing $Name..."
+        $process = Start-Process -FilePath $msiExecPath -ArgumentList $args -Wait -PassThru
+        $exitCode = $process.ExitCode
+
+        if ($exitCode -eq 0 -or $exitCode -eq 3010)
+        {
+            Write-Host -Object 'Installation successful!'
+        }
+        else
+        {
+            Write-Host -Object "Nonzero exit code returned by the installation process : $exitCode."
+            exit $exitCode
+        }
+    }
+    catch
+    {
+        Write-Host -Object "Failed to install $Name!"
+        Write-Host -Object $_.Exception.Message
+        exit -1
+    }
+}
+
+Function InstallZip
+{
+    Param(
+        [String]$Name,
+        [String]$Uri,
+        [String]$Dir
+    )
+
+    try
+    {
+        Write-Host "Downloading $Name..."
+        [string]$randomRoot = Join-Path ${env:Temp} ([System.IO.Path]::GetRandomFileName())
+        [string]$zipPath = $randomRoot + '.zip'
+        Invoke-WebRequest -Uri $Uri -OutFile $zipPath
+        Write-Host "Installing $Name..."
+        Expand-Archive -Path $zipPath -DestinationPath $Dir
+    }
+    catch
+    {
+        Write-Host -Object "Failed to install $Name!"
+        Write-Host -Object $_.Exception.Message
+        exit -1
+    }
+}
+
+Function InstallLLVM
+{
+    Param(
+        [String]$Uri
+    )
+
+    Write-Host "Downloading LLVM..."
+    [string]$randomRoot = Join-Path ${env:Temp} ([System.IO.Path]::GetRandomFileName())
+    [string]$installerPath = $randomRoot + '.exe'
+
+    Invoke-WebRequest -Uri $Uri -OutFile $installerPath
+    Write-Host "Installing LLVM..."
+    Write-Host "Please press next over and over and change no other options."
+    $process = Start-Process -FilePath $installerPath -Wait -PassThru
+    $exitCode = $process.ExitCode
+
+    if ($exitCode -eq 0 -or $exitCode -eq 3010)
+    {
+        Write-Host -Object 'Installation successful!'
+    }
+    else
+    {
+        Write-Host -Object "Nonzero exit code returned by the installation process : $exitCode."
+        exit $exitCode
+    }
+}
+
+InstallVS -WorkLoads $WorkLoads -Sku $Sku -VSBootstrapperURL $VSBootstrapperURL
+InstallMSI 'CMake' $CMakeURL
+InstallZip 'Ninja' $NinjaURL 'C:\Program Files\CMake\bin'
+InstallLLVM $LlvmURL
+InstallZip 'Azure DevOps Agent' $VstsAgentURL 'C:\agent'
+Add-MpPreference -ExclusionPath C:\agent
+& 'C:\agent\config.cmd' --unattended --url $AzureDevOpsURL --auth pat --token $PersonalAccessToken --pool $AzureDevOpsPool --runAsService
+
+Write-Host "Updating PATH ..."
+$environmentKey = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" -Name Path
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" -Name Path -Value "$($environmentKey.Path);C:\Program Files\CMake\bin;C:\Program Files\LLVM\bin"
+
+shutdown /r /t 01
 ```
+
+* Edit the personal access token in the above script, and then run it from an administrative powershell terminal.
+* Sometime during running the script, you'll have to press next a bunch of times for the LLVM installer because it appears to not support unattended install at this time.
+* The script will reboot the VM. Upon reboot, log back into the VM and delete the powershell script (so that the PAT doesn't remain on the machine).
