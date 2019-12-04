@@ -22,9 +22,7 @@
 
 # November 2019
 - [x] [WG21 Belfast Meeting](https://wg21.link/n4814).
-- [ ] `devcrt` test suite running in PRs.
-- [ ] `tr1` test suite running in PRs.
-- [x] Merged C++20 features:
+- [x] Merged 7 C++20 features:
   - P0340R3 [#284](https://github.com/microsoft/STL/pull/284) SFINAE-Friendly `underlying_type`
   - P0553R4 [#310](https://github.com/microsoft/STL/pull/310) `<bit>` Rotating And Counting Functions
   - P0556R3 [#310](https://github.com/microsoft/STL/pull/310) `<bit>` `ispow2()`, `ceil2()`, `floor2()`, ~~`log2p1()`~~ `bit_length()`
@@ -32,6 +30,12 @@
   - P0738R2 [#246](https://github.com/microsoft/STL/pull/246) `istream_iterator` Cleanup
   - P1209R0 [#236](https://github.com/microsoft/STL/pull/236) `erase_if()`, `erase()`
   - P1612R1 [#305](https://github.com/microsoft/STL/pull/305) Relocating `endian` To `<bit>`
+
+# December 2019
+- [ ] `devcrt` test suite running in PRs.
+- [ ] `tr1` test suite running in PRs.
+- [x] Merged C++20 features:
+  - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
 
 # Future
 - [ ] `libcxx` test suite running in PRs.
