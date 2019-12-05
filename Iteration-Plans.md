@@ -35,7 +35,9 @@
 - [ ] `devcrt` test suite running in PRs.
 - [ ] `tr1` test suite running in PRs.
 - [x] Merged C++20 features:
+  - P0595R2 [#353](https://github.com/microsoft/STL/pull/353) `is_constant_evaluated()`
   - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
+  - P1902R1 [#353](https://github.com/microsoft/STL/pull/353) Missing Feature-Test Macros 2017-2019
 
 # Future
 - [ ] `libcxx` test suite running in PRs.
