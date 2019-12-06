@@ -14,3 +14,4 @@ Toolset Version | Visual Studio | `_MSVC_STL_UPDATE`
 19.21 | VS 2019 16.1 | `201903L`
 19.22 | VS 2019 16.2 | `201905L`
 19.23 | VS 2019 16.3 | `201906L`
+19.24 | VS 2019 16.4 | `201909L`
