@@ -24,7 +24,7 @@ When adding public headers, so that customers who are using this header as a way
 
 Ask an STL maintainer to do this for you if you change the set of files in a pull request.
 
-When editing any installers related files, we need to remember to notify the **vctowner** alias.
+When editing any installers related files, we need to remember to notify the **vctowner** alias. The folks on that alias are responsible for editing the mechanism by which Visual Studio is built with new bits.
 
 **src/vctools/crt/lkgsync/updatelkgmanifest.cmd**
 
@@ -65,7 +65,3 @@ Ask an STL maintainer to do this for you if you change the set of files in a pul
 **src/vc/designtime/pkg/src/VC_Pkg_Core_Registration.pkgdef**
 
 When adding **extensionless** *headers*, this makes the Visual Studio IDE recognize them as C++.
-
-**Pkgs/ExternalApis/vctools**
-
-When adding *headers* and are building the NuGet packages used to build Visual Studio itself, we need to add them here.
