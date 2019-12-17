@@ -18,7 +18,7 @@ When adding *sources*, so that the legacy build system picks them up.
 
 **stl/inc/__msvc_all_public_headers.hpp**
 
-When adding public headers, so that customers who are using this header as a way to test all the standard library headers are actually testing all the standard library headers.
+When adding *public headers*, so that customers who are using this header as a way to test all the standard library headers are actually testing all the standard library headers.
 
 ## Edits in the MSVC team's internal repository
 
@@ -64,4 +64,4 @@ Ask an STL maintainer to do this for you if you change the set of files in a pul
 
 **src/vc/designtime/pkg/src/VC_Pkg_Core_Registration.pkgdef**
 
-When adding **extensionless** *headers*, this makes the Visual Studio IDE recognize them as C++.
+When adding **extensionless** *headers*, this makes the Visual Studio IDE recognize them as C++. Technically we must mark private headers here if they are extensionless, but going forward we've been giving private headers a .h extension so that this list need not be modified.
