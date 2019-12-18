@@ -28,15 +28,15 @@ When editing any installers related files, we need to remember to notify the **v
 
 * **src/vctools/crt/lkgsync/updatelkgmanifest.cmd**
 
-  Run this to update scripts used for synchronizing libraries' team code into the Windows tree.
+  When adding *headers* or *sources*, run this to update scripts used for synchronizing libraries team code into the Windows tree.
 
 * **src/SetupPackages/swix/VisualCpp/crt.headers/files.swr**
 
-  Update this list to get new headers picked up by the Visual Studio installers.
+  Update this list to get new *headers* picked up by the Visual Studio installers.
 
 * **src/SetupPackages/swix/VisualCpp/crt.source/files.swr**
 
-  Update this list to get new *sources* picked up by the Visual Studio installers (For example, `C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\crt\src`).
+  Update this list to get new *sources* picked up by the Visual Studio installers (for example, `C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\crt\src`).
 
 * **src/vctools/crt/copy_crt/copy_crt.nativeproj**
 
@@ -64,4 +64,4 @@ Ask an STL maintainer to do this for you if you change the set of files in a pul
 
 * **src/vc/designtime/pkg/src/VC_Pkg_Core_Registration.pkgdef**
 
-  When adding **extensionless** *headers*, this makes the Visual Studio IDE recognize them as C++. Technically we must mark private headers here if they are extensionless, but going forward we've been giving private headers a .h extension so that this list need not be modified.
+  When adding **extensionless** *headers*, this makes the Visual Studio IDE recognize them as C++. Technically we must mark private headers here if they are extensionless, but going forward we've been giving private headers a .h extension so that this list need not be modified. [Microsoft-internal link.](https://devdiv.visualstudio.com/DevDiv/_git/VS?path=%2Fsrc%2Fvc%2Fdesigntime%2Fpkg%2Fsrc%2FVC_Pkg_Core_Registration.pkgdef&version=GBmaster)
