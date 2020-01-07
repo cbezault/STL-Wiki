@@ -1,6 +1,6 @@
 Steps taken to set up a build machine. These are how @BillyONeal set up our agents:
 
-* Get an Azure VM created. The current build agents are `B8ms` sized machines.
+* Get an Azure VM created. The current build agents are `B8ms` sized machines. Ensure firewall rules limit access to only the Azure DevOps IPs as documented at https://docs.microsoft.com/en-us/azure/devops/organizations/security/allow-list-ip-url?view=azure-devops
 * Log in and create a powershell script with the following content:
 
 ```
