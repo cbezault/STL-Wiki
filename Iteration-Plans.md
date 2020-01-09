@@ -37,10 +37,10 @@
   - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
   - P1902R1 [#353](https://github.com/microsoft/STL/pull/353) Missing Feature-Test Macros 2017-2019
 
-# January 2019
+# January 2020
 - [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
 - [x] Merged C++20 features:
-  - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` for `<numeric>` algorithms
+  - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
 
 # Future
 - [ ] `devcrt` test suite running in PRs.
