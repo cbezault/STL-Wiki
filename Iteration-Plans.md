@@ -32,14 +32,17 @@
   - P1612R1 [#305](https://github.com/microsoft/STL/pull/305) Relocating `endian` To `<bit>`
 
 # December 2019
-- [ ] `devcrt` test suite running in PRs.
-- [ ] `tr1` test suite running in PRs.
 - [x] Merged C++20 features:
   - P0595R2 [#353](https://github.com/microsoft/STL/pull/353) `is_constant_evaluated()`
   - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
   - P1902R1 [#353](https://github.com/microsoft/STL/pull/353) Missing Feature-Test Macros 2017-2019
 
+# January 2019
+- [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
+
 # Future
+- [ ] `devcrt` test suite running in PRs.
+- [ ] `tr1` test suite running in PRs.
 - [ ] `libcxx` test suite running in PRs.
 - [ ] Bring remaining build system components online so that we can shut down the old internal build system.
 - [ ] Enable automatic ingestion of GitHub changes into Visual Studio.
