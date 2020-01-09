@@ -39,6 +39,8 @@
 
 # January 2019
 - [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
+- [x] Merged C++20 features:
+  - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` for `<numeric>` algorithms
 
 # Future
 - [ ] `devcrt` test suite running in PRs.
