@@ -40,6 +40,7 @@
 # January 2020
 - [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
 - [x] Merged C++20 features:
+  - P0122R7 [#142](https://github.com/microsoft/STL/pull/142) `<span>`
   - P0357R3 [#393](https://github.com/microsoft/STL/pull/393) Supporting Incomplete Types In `reference_wrapper`
   - P1006R1 [#397](https://github.com/microsoft/STL/pull/397) `constexpr` For `pointer_traits<T*>::pointer_to()`
   - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
