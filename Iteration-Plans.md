@@ -44,7 +44,7 @@
   - P0202R3 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For `<algorithm>` And `exchange()`
   - P0357R3 [#393](https://github.com/microsoft/STL/pull/393) Supporting Incomplete Types In `reference_wrapper`
   - P0879R0 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For Swapping Functions
-  - P0883R2 [#390](https://github.com/microsoft/STL/pull/390) Fixing Atomic Initialization (for non-Clang)
+  - P0883R2 [#390](https://github.com/microsoft/STL/pull/390) Fixing Atomic Initialization
   - P1006R1 [#397](https://github.com/microsoft/STL/pull/397) `constexpr` For `pointer_traits<T*>::pointer_to()`
   - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
 
