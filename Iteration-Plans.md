@@ -39,6 +39,7 @@
 
 # January 2020
 - [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
+- [x] Significantly improved performance of `string + null terminated` and `null terminated + string` `operator+` overloads in `<string>`. (part of [#467](https://github.com/microsoft/STL/pull/467))
 - [x] Merged C++20 features:
   - P0122R7 [#142](https://github.com/microsoft/STL/pull/142) `<span>`
   - P0202R3 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For `<algorithm>` And `exchange()`
@@ -46,7 +47,11 @@
   - P0879R0 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For Swapping Functions
   - P0883R2 [#390](https://github.com/microsoft/STL/pull/390) Fixing Atomic Initialization
   - P1006R1 [#397](https://github.com/microsoft/STL/pull/397) `constexpr` For `pointer_traits<T*>::pointer_to()`
+  - P1165R1 [#467](https://github.com/microsoft/STL/pull/467) Consistently Propagating Stateful Allocators In `basic_string`'s `operator+()`
   - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
+
+# Feburary 2020
+- [ ] [WG21 Prague Meeting](https://wg21.link/n4817).
 
 # Future
 - [ ] `devcrt` test suite running in PRs.
