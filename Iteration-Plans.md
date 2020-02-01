@@ -50,8 +50,10 @@
   - P1165R1 [#467](https://github.com/microsoft/STL/pull/467) Consistently Propagating Stateful Allocators In `basic_string`'s `operator+()`
   - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
 
-# Feburary 2020
+# February 2020
 - [ ] [WG21 Prague Meeting](https://wg21.link/n4817).
+- [X] Merged C++20 features:
+  - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
 
 # Future
 - [ ] `devcrt` test suite running in PRs.
