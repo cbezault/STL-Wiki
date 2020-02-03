@@ -53,6 +53,7 @@
 # February 2020
 - [ ] [WG21 Prague Meeting](https://wg21.link/n4817).
 - [X] Merged C++20 features:
+  - P0619R4 [#380](https://github.com/microsoft/STL/pull/380) Removing C++17-Deprecated Features In C++20
   - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
 
 # Future
