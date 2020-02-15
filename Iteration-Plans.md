@@ -55,9 +55,19 @@
 - [X] Merged C++20 features:
   - P0619R4 [#380](https://github.com/microsoft/STL/pull/380) Removing C++17-Deprecated Features In C++20
   - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
+- [X] Added test suites (not yet running):
+  - `tests/tr1` [#485](https://github.com/microsoft/STL/pull/485)
+  - `tests/std` [#498](https://github.com/microsoft/STL/pull/498)
+- [X] Fixed bugs:
+  - `complex` `acos()`, `acosh()`, and `asinh()` now return correct results [#401](https://github.com/microsoft/STL/pull/401)
+- [X] Improved performance:
+  - Reduced memory consumption of `system_category().message()` [#457](https://github.com/microsoft/STL/pull/457)
+- [X] Code cleanups:
+  - `src/syserror.cpp` now uses range-for and `static_cast` [#481](https://github.com/microsoft/STL/pull/481)
+  - Changed macro constants to `constexpr` variables [#487](https://github.com/microsoft/STL/pull/487)
 
 # Future
-- [ ] `devcrt` test suite running in PRs.
+- [ ] `std` test suite running in PRs.
 - [ ] `tr1` test suite running in PRs.
 - [ ] `libcxx` test suite running in PRs.
 - [ ] Bring remaining build system components online so that we can shut down the old internal build system.
