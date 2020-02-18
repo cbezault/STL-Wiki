@@ -5,7 +5,8 @@ This repo supports [custom autolinks](https://help.github.com/en/articles/autoli
 |            Pattern | Notes | Example |
 |--------------------|-------|---------|
 | DevCom-&lt;num&gt; | Developer Community bugs     | [DevCom-724444](https://developercommunity.visualstudio.com/content/problem/724444/meow.html) |
-| LLVM-&lt;num&gt;   | Clang/LLVM bugs              | [LLVM-41915](https://bugs.llvm.org/show_bug.cgi?id=41915) |
+| LLVM-&lt;num&gt;   | Clang/LLVM/libcxx bugs       | [LLVM-41915](https://bugs.llvm.org/show_bug.cgi?id=41915) |
+| LLVM-D&lt;num&gt;  | Clang/LLVM/libcxx patches    | [LLVM-D73138](https://reviews.llvm.org/D73138) |
 | LWG-&lt;num&gt;    | Library Working Group issues | [LWG-3080](https://cplusplus.github.io/LWG/issue3080) |
 | WG21-N&lt;num&gt;  | WG21 N-numbered documents    | [WG21-N4190](https://wg21.link/N4190) |
 | WG21-P&lt;num&gt;  | WG21 P-numbered proposals    | [WG21-P1209](https://wg21.link/P1209) |
