@@ -67,6 +67,7 @@
   - Changed macro constants to `constexpr` variables [#487](https://github.com/microsoft/STL/pull/487)
 
 # Late February 2020 (shipped in VS 2019 16.7)
+- [ ] Concept-constrained comparisons: includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function objects `compare_three_way`, `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
 
 # Future
 - [ ] `std` test suite running in PRs.
