@@ -1,4 +1,4 @@
-# September 2019
+# September 2019 (shipped in VS 2019 16.5)
 - [x] Announce this repo at [CppCon 2019](https://cppcon.org/).
 - [x] Add initial documentation: readme, license, and roadmap.
 - [x] Add initial CMake build scripts for Desktop-only msvcp.
@@ -10,7 +10,7 @@
   - P1227R2 [#130](https://github.com/microsoft/STL/pull/130) Signed `std::ssize()`
   - P1357R1 [#127](https://github.com/microsoft/STL/pull/127) `is_bounded_array`, `is_unbounded_array`
 
-# October 2019
+# October 2019 (shipped in VS 2019 16.5)
 - [x] Investigate test harness solutions, either building our own to more closely match the internal system in a reasonable way, or using libcxx's `lit`. (Chose to build our own.)
 - [x] Begin auditing test case source files from the `devcrt` and `tr1` test suites.
 - [x] Implemented [Custom Autolinks](https://github.com/microsoft/STL/wiki/Custom-Autolinks) in this repo.
@@ -20,7 +20,7 @@
   - P0767R1 [#179](https://github.com/microsoft/STL/pull/179) Deprecating `is_pod`
   - P0966R1 [#176](https://github.com/microsoft/STL/pull/176) `string::reserve()` Should Not Shrink
 
-# November 2019
+# November 2019 (shipped in VS 2019 16.5)
 - [x] [WG21 Belfast Meeting](https://wg21.link/n4814).
 - [x] Merged 7 C++20 features:
   - P0340R3 [#284](https://github.com/microsoft/STL/pull/284) SFINAE-Friendly `underlying_type`
@@ -31,13 +31,13 @@
   - P1209R0 [#236](https://github.com/microsoft/STL/pull/236) `erase_if()`, `erase()`
   - P1612R1 [#305](https://github.com/microsoft/STL/pull/305) Relocating `endian` To `<bit>`
 
-# December 2019
+# December 2019 (shipped in VS 2019 16.5)
 - [x] Merged C++20 features:
   - P0595R2 [#353](https://github.com/microsoft/STL/pull/353) `is_constant_evaluated()`
   - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
   - P1902R1 [#353](https://github.com/microsoft/STL/pull/353) Missing Feature-Test Macros 2017-2019
 
-# January 2020
+# January 2020 (shipped in VS 2019 16.6)
 - [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
 - [x] Significantly improved performance of `string + null terminated` and `null terminated + string` `operator+` overloads in `<string>`. (part of [#467](https://github.com/microsoft/STL/pull/467))
 - [x] Merged C++20 features:
@@ -50,8 +50,8 @@
   - P1165R1 [#467](https://github.com/microsoft/STL/pull/467) Consistently Propagating Stateful Allocators In `basic_string`'s `operator+()`
   - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
 
-# February 2020
-- [ ] [WG21 Prague Meeting](https://wg21.link/n4817).
+# Early February 2020 (shipped in VS 2019 16.6)
+- [X] [WG21 Prague Meeting](https://wg21.link/n4817).
 - [X] Merged C++20 features:
   - P0619R4 [#380](https://github.com/microsoft/STL/pull/380) Removing C++17-Deprecated Features In C++20
   - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
@@ -65,6 +65,8 @@
 - [X] Code cleanups:
   - `src/syserror.cpp` now uses range-for and `static_cast` [#481](https://github.com/microsoft/STL/pull/481)
   - Changed macro constants to `constexpr` variables [#487](https://github.com/microsoft/STL/pull/487)
+
+# Late February 2020 (shipped in VS 2019 16.7)
 
 # Future
 - [ ] `std` test suite running in PRs.
