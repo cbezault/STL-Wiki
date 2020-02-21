@@ -10,11 +10,9 @@
 # When Closing Issues (Bugs, Enhancements, Features, LWG)
 
 * In addition to closing the issue, tag it as `fixed` (and remove `work in progress` if that was present). Leave the other tags unchanged. We use `fixed` to mark issues that were solved via commits, as opposed to being `resolved` without a commit.
-* Microsoft-internal: Update [changelog.docx](https://microsoft.sharepoint.com/:w:/t/DD_VC/EcCfKMyoyTpCvFi8_ypVW7UBoUhOtuzBRyXCXH3CtOiR_w?e=keIotk) to record the MSVC-PR. We should replace this process soon (possibly by recording more in the Iteration Plans).
+* Update the wiki's [Iteration Plans](https://github.com/microsoft/STL/wiki/Iteration-Plans).
 
 # When Adding Features (Or LWG Issues)
-
-* Update the wiki's [Iteration Plans](https://github.com/microsoft/STL/wiki/Iteration-Plans).
 
 * Microsoft-internal: Update [stl.xlsx](https://microsoft.sharepoint.com/:x:/t/DD_VC/EVoxm5Q8dsNKiQrmJx79VEcBn8TQMH2k5Lf9uSVj-kRWig?e=stjtv6) or [lwg.xlsx](https://microsoft.sharepoint.com/:x:/t/DD_VC/EY2TKWJxBGpAhbRrmQIRtmoB6jmz7tSWlSatScneQlwkoQ?e=nHdQqR). (Note to contributors: these spreadsheets contain the same information as our `cxx20` and `lwg` tagged issues; Excel simply provides an easy-to-scan dashboard.)
   * Change the `Status` filter to display `patch` papers; restore this when you're done.
