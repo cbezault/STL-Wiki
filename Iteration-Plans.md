@@ -1,28 +1,28 @@
 # September 2019 (shipped in VS 2019 16.5)
-- [x] Announce this repo at [CppCon 2019](https://cppcon.org/).
-- [x] Add initial documentation: readme, license, and roadmap.
-- [x] Add initial CMake build scripts for Desktop-only msvcp.
-- [x] Investigate continuous integration options, like GitHub Actions or Azure Pipelines. (Chose Azure Pipelines.)
-- [x] Builds running in PRs.
-- [x] Merged 4 C++20 features:
+- [X] Announce this repo at [CppCon 2019](https://cppcon.org/).
+- [X] Add initial documentation: readme, license, and roadmap.
+- [X] Add initial CMake build scripts for Desktop-only msvcp.
+- [X] Investigate continuous integration options, like GitHub Actions or Azure Pipelines. (Chose Azure Pipelines.)
+- [X] Builds running in PRs.
+- [X] Merged 4 C++20 features:
   - P0325R4 [#135](https://github.com/microsoft/STL/pull/135) `to_array()`
   - P0439R0 [#124](https://github.com/microsoft/STL/pull/124) `enum class memory_order`
   - P1227R2 [#130](https://github.com/microsoft/STL/pull/130) Signed `std::ssize()`
   - P1357R1 [#127](https://github.com/microsoft/STL/pull/127) `is_bounded_array`, `is_unbounded_array`
 
 # October 2019 (shipped in VS 2019 16.5)
-- [x] Investigate test harness solutions, either building our own to more closely match the internal system in a reasonable way, or using libcxx's `lit`. (Chose to build our own.)
-- [x] Begin auditing test case source files from the `devcrt` and `tr1` test suites.
-- [x] Implemented [Custom Autolinks](https://github.com/microsoft/STL/wiki/Custom-Autolinks) in this repo.
-- [x] Merged 4 C++20 features:
+- [X] Investigate test harness solutions, either building our own to more closely match the internal system in a reasonable way, or using libcxx's `lit`. (Chose to build our own.)
+- [X] Begin auditing test case source files from the `devcrt` and `tr1` test suites.
+- [X] Implemented [Custom Autolinks](https://github.com/microsoft/STL/wiki/Custom-Autolinks) in this repo.
+- [X] Merged 4 C++20 features:
   - P0356R5 [#158](https://github.com/microsoft/STL/pull/158) `bind_front()`
   - P0655R1 [#201](https://github.com/microsoft/STL/pull/201) `visit<R>()`
   - P0767R1 [#179](https://github.com/microsoft/STL/pull/179) Deprecating `is_pod`
   - P0966R1 [#176](https://github.com/microsoft/STL/pull/176) `string::reserve()` Should Not Shrink
 
 # November 2019 (shipped in VS 2019 16.5)
-- [x] [WG21 Belfast Meeting](https://wg21.link/n4814).
-- [x] Merged 7 C++20 features:
+- [X] [WG21 Belfast Meeting](https://wg21.link/n4814).
+- [X] Merged 7 C++20 features:
   - P0340R3 [#284](https://github.com/microsoft/STL/pull/284) SFINAE-Friendly `underlying_type`
   - P0553R4 [#310](https://github.com/microsoft/STL/pull/310) `<bit>` Rotating And Counting Functions
   - P0556R3 [#310](https://github.com/microsoft/STL/pull/310) `<bit>` `ispow2()`, `ceil2()`, `floor2()`, ~~`log2p1()`~~ `bit_length()`
@@ -32,15 +32,15 @@
   - P1612R1 [#305](https://github.com/microsoft/STL/pull/305) Relocating `endian` To `<bit>`
 
 # December 2019 (shipped in VS 2019 16.5)
-- [x] Merged C++20 features:
+- [X] Merged C++20 features:
   - P0595R2 [#353](https://github.com/microsoft/STL/pull/353) `is_constant_evaluated()`
   - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
   - P1902R1 [#353](https://github.com/microsoft/STL/pull/353) Missing Feature-Test Macros 2017-2019
 
 # January 2020 (shipped in VS 2019 16.6)
-- [x] Deprecate `std::rel_ops` [#402](https://github.com/microsoft/STL/pull/402)
-- [x] Significantly improved performance of `string + null terminated` and `null terminated + string` `operator+` overloads in `<string>`. (part of [#467](https://github.com/microsoft/STL/pull/467))
-- [x] Merged C++20 features:
+- [X] Deprecate `std::rel_ops`. [#402](https://github.com/microsoft/STL/pull/402)
+- [X] Significantly improved performance of `string + null terminated` and `null terminated + string` `operator+` overloads in `<string>`. [#467](https://github.com/microsoft/STL/pull/467)
+- [X] Merged C++20 features:
   - P0122R7 [#142](https://github.com/microsoft/STL/pull/142) `<span>`
   - P0202R3 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For `<algorithm>` And `exchange()`
   - P0357R3 [#393](https://github.com/microsoft/STL/pull/393) Supporting Incomplete Types In `reference_wrapper`
@@ -59,17 +59,19 @@
   - `tests/tr1` [#485](https://github.com/microsoft/STL/pull/485)
   - `tests/std` [#498](https://github.com/microsoft/STL/pull/498)
 - [X] Fixed bugs:
-  - `complex` `acos()`, `acosh()`, and `asinh()` now return correct results [#401](https://github.com/microsoft/STL/pull/401)
+  - `complex` `acos()`, `acosh()`, and `asinh()` now return correct results. [#401](https://github.com/microsoft/STL/pull/401)
 - [X] Improved performance:
-  - Reduced memory consumption of `system_category().message()` [#457](https://github.com/microsoft/STL/pull/457)
+  - Reduced memory consumption of `system_category().message()`. [#457](https://github.com/microsoft/STL/pull/457)
 - [X] Code cleanups:
-  - `src/syserror.cpp` now uses range-for and `static_cast` [#481](https://github.com/microsoft/STL/pull/481)
-  - Changed macro constants to `constexpr` variables [#487](https://github.com/microsoft/STL/pull/487)
+  - `src/syserror.cpp` now uses range-for and `static_cast`. [#481](https://github.com/microsoft/STL/pull/481)
+  - Changed macro constants to `constexpr` variables. [#487](https://github.com/microsoft/STL/pull/487)
 
 # Late February 2020 (shipped in VS 2019 16.7)
 - [X] Merged C++20 features:
   - P1614R2 (PARTIAL) [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
   - P0896R4 (PARTIAL) [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
+- [X] Improved throughput:
+  - `<array>` no longer includes `<algorithm>`, `<iterator>`, and `<tuple>`; this is a source-breaking change for projects that weren't strict about including what they use. [#482](https://github.com/microsoft/STL/pull/482)
 
 # Future
 - [ ] `std` test suite running in PRs.
