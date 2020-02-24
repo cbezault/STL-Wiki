@@ -1,3 +1,6 @@
+Manually done changes to the current builders that need be integrated into the below next time we replace agents:
+* Install Python 3.8.1.
+
 Steps taken to set up a build machine. These are how @BillyONeal set up our agents:
 
 * Get an Azure VM created. The current build agents are `B8ms` sized machines.
