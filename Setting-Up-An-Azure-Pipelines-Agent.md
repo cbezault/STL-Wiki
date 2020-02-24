@@ -1,6 +1,3 @@
-Manually done changes to the current builders that need be integrated into the below next time we replace agents:
-* Install Python 3.8.1.
-
 Steps taken to set up a build machine. These are how @BillyONeal set up our agents:
 
 * Get an Azure VM created. The current build agents are `B8ms` sized machines.
@@ -28,6 +25,7 @@ $VSBootstrapperURL = 'https://aka.ms/vs/16/pre/vs_buildtools.exe'
 $CMakeURL = 'https://github.com/Kitware/CMake/releases/download/v3.16.1/cmake-3.16.1-win64-x64.msi'
 $LlvmURL = 'https://releases.llvm.org/9.0.0/LLVM-9.0.0-win64.exe'
 $NinjaURL = 'https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip'
+$PythonURL = 'https://www.python.org/ftp/python/3.8.1/python-3.8.1-amd64.exe'
 $VstsAgentURL = 'https://vstsagentpackage.azureedge.net/agent/2.160.1/vsts-agent-win-x64-2.160.1.zip'
 
 $ErrorActionPreference = "Stop"
@@ -159,10 +157,42 @@ Function InstallLLVM
     }
 }
 
+Function InstallPython
+{
+    Param(
+        [String]$Uri
+    )
+
+    Write-Host "Downloading Python..."
+    [string]$randomRoot = Join-Path ${env:Temp} ([System.IO.Path]::GetRandomFileName())
+    [string]$installerPath = $randomRoot + '.exe'
+
+    Invoke-WebRequest -Uri $Uri -OutFile $installerPath
+    Write-Host "Installing Python..."
+    $process = Start-Process -FilePath $installerPath -ArgumentList @('/passive', 'InstallAllUsers=1', 'PrependPath=1', 'CompileAll=1') -Wait -PassThru
+    $exitCode = $process.ExitCode
+
+    if ($exitCode -eq 0)
+    {
+        Write-Host -Object 'Installation successful!'
+    }
+    else
+    {
+        Write-Host -Object "Nonzero exit code returned by the installation process : $exitCode."
+        exit $exitCode
+    }
+}
+
+if ($PersonalAccessToken -eq 'CHANGE THIS') {
+    Write-Host 'You forgot to fill in your personal access token.'
+    exit 1
+}
+
 InstallVS -WorkLoads $WorkLoads -Sku $Sku -VSBootstrapperURL $VSBootstrapperURL
 InstallMSI 'CMake' $CMakeURL
 InstallZip 'Ninja' $NinjaURL 'C:\Program Files\CMake\bin'
 InstallLLVM $LlvmURL
+InstallPython $PythonURL
 InstallZip 'Azure DevOps Agent' $VstsAgentURL 'C:\agent'
 Add-MpPreference -ExclusionPath C:\agent
 & 'C:\agent\config.cmd' --unattended --url $AzureDevOpsURL --auth pat --token $PersonalAccessToken --pool $AzureDevOpsPool --runAsService
