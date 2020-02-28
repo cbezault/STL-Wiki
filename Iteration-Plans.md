@@ -71,6 +71,8 @@
   - P0896R4 (PARTIAL) [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
   - P1614R2 (PARTIAL) [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
   - P1956R1 [#554](https://github.com/microsoft/STL/issues/554) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
+- [X] Improved performance:
+  - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
 - [X] Improved throughput:
   - `<array>` no longer includes `<algorithm>`, `<iterator>`, and `<tuple>`; this is a source-breaking change for projects that weren't strict about including what they use. [#482](https://github.com/microsoft/STL/pull/482)
 
