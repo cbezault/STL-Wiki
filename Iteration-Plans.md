@@ -72,7 +72,7 @@
   - P1956R1 [#554](https://github.com/microsoft/STL/issues/554) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
 - [X] Merged partial C++20 features:
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
-  - P0784R7 #501](https://github.com/microsoft/STL/pull/501) Library Support For More constexpr Containers; includes `construct_at`
+  - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More constexpr Containers; includes `construct_at`
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
 - [X] Improved throughput:
