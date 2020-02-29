@@ -55,6 +55,8 @@
 - [X] Merged C++20 features:
   - P0619R4 [#380](https://github.com/microsoft/STL/pull/380) Removing C++17-Deprecated Features In C++20
   - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
+- [X] Merged partial C++20 features:
+  - `construct_at` [#501](https://github.com/microsoft/STL/pull/501) from P0784R7 "Library Support For More constexpr Containers"
 - [X] Added test suites (not yet running):
   - `tests/tr1` [#485](https://github.com/microsoft/STL/pull/485)
   - `tests/std` [#498](https://github.com/microsoft/STL/pull/498)
