@@ -69,14 +69,25 @@
 # Late February 2020 (shipped in VS 2019 16.7)
 - [X] Merged C++20 features:
   - P1956R1 [#554](https://github.com/microsoft/STL/issues/554) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
+  - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
 - [X] Merged **partial** C++20 features:
   - P0896R4 [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
   - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
+- [X] Merged LWG issue resolutions:
+  - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
+  - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
+  - LWG-3390 [#567](https://github.com/microsoft/STL/pull/567) `make_move_iterator()` cannot be used to construct a `move_iterator` for a move-only iterator
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
 - [X] Improved throughput:
   - `<array>` no longer includes `<algorithm>`, `<iterator>`, and `<tuple>`; this is a source-breaking change for projects that weren't strict about including what they use. [#482](https://github.com/microsoft/STL/pull/482)
+- [X] Code cleanups:
+  - Consistently use empty braces to construct tags like `_Meow{}`. [#497](https://github.com/microsoft/STL/pull/497)
+  - Avoid declaring multiple variables on a single line. [#550](https://github.com/microsoft/STL/pull/550)
+  - Removed comment now that `to_address()` is now totally `constexpr`. [#568](https://github.com/microsoft/STL/pull/568)
+
+# March 2020 (shipped in VS 2019 16.7)
 
 # Future
 - [ ] `std` test suite running in PRs.
