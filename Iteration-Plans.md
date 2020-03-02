@@ -91,6 +91,8 @@
 
 - [X] Fixed bugs:
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
+- [X] Code cleanups:
+  - Consistently use `__cpp_lib_byte` to detect whether `std::byte` is available. [#577](https://github.com/microsoft/STL/pull/577)
 
 # Future
 - [ ] `std` test suite running in PRs.
