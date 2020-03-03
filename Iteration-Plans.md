@@ -92,7 +92,7 @@
 - [X] Fixed bugs:
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
   - \<filesystem\> `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
-  - \<filesystem\> `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552] (https://github.com/microsoft/STL/pull/552)
+  - \<filesystem\> `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
 - [X] Code cleanups:
   - Consistently use `__cpp_lib_byte` to detect whether `std::byte` is available. [#577](https://github.com/microsoft/STL/pull/577)
 
