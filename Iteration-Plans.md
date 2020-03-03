@@ -89,6 +89,8 @@
 
 # March 2020 (shipped in VS 2019 16.7)
 
+- [X] Merged LWG issue resolutions:
+  - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
 - [X] Fixed bugs:
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
   - `<filesystem>` `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
