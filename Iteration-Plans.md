@@ -97,6 +97,7 @@
   - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
 - [X] Code cleanups:
   - Consistently use `__cpp_lib_byte` to detect whether `std::byte` is available. [#577](https://github.com/microsoft/STL/pull/577)
+  - Replaced `_STATIC_UNLESS_PURE` with `static`. (This was a macro workaround for a compiler bug that was fixed.) [#584](https://github.com/microsoft/STL/pull/584)
 
 # Future
 - [ ] `std` test suite running in PRs.
