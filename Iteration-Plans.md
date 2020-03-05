@@ -73,6 +73,7 @@
   - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
+  - Removed layers of calls to helpers and `std::forward` in `std::invoke`. [#585](https://github.com/microsoft/STL/pull/585)
 - [X] Improved throughput:
   - `<array>` no longer includes `<algorithm>`, `<iterator>`, and `<tuple>`; this is a source-breaking change for projects that weren't strict about including what they use. [#482](https://github.com/microsoft/STL/pull/482)
 - [X] Code cleanups:
