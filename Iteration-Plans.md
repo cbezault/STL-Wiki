@@ -1,83 +1,76 @@
-# September 2019 (shipped in VS 2019 16.5)
+# Shipped in VS 2019 16.5
 - [X] Announce this repo at [CppCon 2019](https://cppcon.org/).
 - [X] Add initial documentation: readme, license, and roadmap.
 - [X] Add initial CMake build scripts for Desktop-only msvcp.
 - [X] Investigate continuous integration options, like GitHub Actions or Azure Pipelines. (Chose Azure Pipelines.)
 - [X] Builds running in PRs.
-- [X] Merged 4 C++20 features:
-  - P0325R4 [#135](https://github.com/microsoft/STL/pull/135) `to_array()`
-  - P0439R0 [#124](https://github.com/microsoft/STL/pull/124) `enum class memory_order`
-  - P1227R2 [#130](https://github.com/microsoft/STL/pull/130) Signed `std::ssize()`
-  - P1357R1 [#127](https://github.com/microsoft/STL/pull/127) `is_bounded_array`, `is_unbounded_array`
-
-# October 2019 (shipped in VS 2019 16.5)
 - [X] Investigate test harness solutions, either building our own to more closely match the internal system in a reasonable way, or using libcxx's `lit`. (Chose to build our own.)
 - [X] Begin auditing test case source files from the `devcrt` and `tr1` test suites.
 - [X] Implemented [Custom Autolinks](https://github.com/microsoft/STL/wiki/Custom-Autolinks) in this repo.
-- [X] Merged 4 C++20 features:
-  - P0356R5 [#158](https://github.com/microsoft/STL/pull/158) `bind_front()`
-  - P0655R1 [#201](https://github.com/microsoft/STL/pull/201) `visit<R>()`
-  - P0767R1 [#179](https://github.com/microsoft/STL/pull/179) Deprecating `is_pod`
-  - P0966R1 [#176](https://github.com/microsoft/STL/pull/176) `string::reserve()` Should Not Shrink
-
-# November 2019 (shipped in VS 2019 16.5)
 - [X] [WG21 Belfast Meeting](https://wg21.link/n4814).
-- [X] Merged 7 C++20 features:
+- [X] Merged C++20 features:
+  - P0325R4 [#135](https://github.com/microsoft/STL/pull/135) `to_array()`
   - P0340R3 [#284](https://github.com/microsoft/STL/pull/284) SFINAE-Friendly `underlying_type`
+  - P0356R5 [#158](https://github.com/microsoft/STL/pull/158) `bind_front()`
+  - P0439R0 [#124](https://github.com/microsoft/STL/pull/124) `enum class memory_order`
   - P0553R4 [#310](https://github.com/microsoft/STL/pull/310) `<bit>` Rotating And Counting Functions
   - P0556R3 [#310](https://github.com/microsoft/STL/pull/310) `<bit>` `ispow2()`, `ceil2()`, `floor2()`, ~~`log2p1()`~~ `bit_length()`
-  - P0631R8 [#261](https://github.com/microsoft/STL/pull/261) `<numbers>` Math Constants
-  - P0738R2 [#246](https://github.com/microsoft/STL/pull/246) `istream_iterator` Cleanup
-  - P1209R0 [#236](https://github.com/microsoft/STL/pull/236) `erase_if()`, `erase()`
-  - P1612R1 [#305](https://github.com/microsoft/STL/pull/305) Relocating `endian` To `<bit>`
-
-# December 2019 (shipped in VS 2019 16.5)
-- [X] Merged C++20 features:
   - P0595R2 [#353](https://github.com/microsoft/STL/pull/353) `is_constant_evaluated()`
+  - P0631R8 [#261](https://github.com/microsoft/STL/pull/261) `<numbers>` Math Constants
+  - P0655R1 [#201](https://github.com/microsoft/STL/pull/201) `visit<R>()`
+  - P0738R2 [#246](https://github.com/microsoft/STL/pull/246) `istream_iterator` Cleanup
+  - P0767R1 [#179](https://github.com/microsoft/STL/pull/179) Deprecating `is_pod`
+  - P0966R1 [#176](https://github.com/microsoft/STL/pull/176) `string::reserve()` Should Not Shrink
+  - P1209R0 [#236](https://github.com/microsoft/STL/pull/236) `erase_if()`, `erase()`
+  - P1227R2 [#130](https://github.com/microsoft/STL/pull/130) Signed `std::ssize()`
+  - P1357R1 [#127](https://github.com/microsoft/STL/pull/127) `is_bounded_array`, `is_unbounded_array`
+  - P1612R1 [#305](https://github.com/microsoft/STL/pull/305) Relocating `endian` To `<bit>`
   - P1690R1 [#341](https://github.com/microsoft/STL/pull/341) Refining Heterogeneous Lookup For Unordered Containers
   - P1902R1 [#353](https://github.com/microsoft/STL/pull/353) Missing Feature-Test Macros 2017-2019
 
-# January 2020 (shipped in VS 2019 16.6)
+# Shipped in VS 2019 16.6
 - [X] Deprecate `std::rel_ops`. [#402](https://github.com/microsoft/STL/pull/402)
-- [X] Significantly improved performance of `string + null terminated` and `null terminated + string` `operator+` overloads in `<string>`. [#467](https://github.com/microsoft/STL/pull/467)
+- [X] [WG21 Prague Meeting](https://wg21.link/n4817).
 - [X] Merged C++20 features:
   - P0122R7 [#142](https://github.com/microsoft/STL/pull/142) `<span>`
   - P0202R3 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For `<algorithm>` And `exchange()`
   - P0357R3 [#393](https://github.com/microsoft/STL/pull/393) Supporting Incomplete Types In `reference_wrapper`
+  - P0619R4 [#380](https://github.com/microsoft/STL/pull/380) Removing C++17-Deprecated Features In C++20
   - P0879R0 [#425](https://github.com/microsoft/STL/pull/425) `constexpr` For Swapping Functions
   - P0883R2 [#390](https://github.com/microsoft/STL/pull/390) Fixing Atomic Initialization
   - P1006R1 [#397](https://github.com/microsoft/STL/pull/397) `constexpr` For `pointer_traits<T*>::pointer_to()`
   - P1165R1 [#467](https://github.com/microsoft/STL/pull/467) Consistently Propagating Stateful Allocators In `basic_string`'s `operator+()`
-  - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
-
-# Early February 2020 (shipped in VS 2019 16.6)
-- [X] [WG21 Prague Meeting](https://wg21.link/n4817).
-- [X] Merged C++20 features:
-  - P0619R4 [#380](https://github.com/microsoft/STL/pull/380) Removing C++17-Deprecated Features In C++20
   - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
+  - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
 - [X] Added test suites (not yet running):
   - `tests/tr1` [#485](https://github.com/microsoft/STL/pull/485)
   - `tests/std` [#498](https://github.com/microsoft/STL/pull/498)
 - [X] Fixed bugs:
   - `complex` `acos()`, `acosh()`, and `asinh()` now return correct results. [#401](https://github.com/microsoft/STL/pull/401)
 - [X] Improved performance:
+  - Significantly improved performance of `string + null terminated` and `null terminated + string` `operator+` overloads in `<string>`. [#467](https://github.com/microsoft/STL/pull/467)
   - Reduced memory consumption of `system_category().message()`. [#457](https://github.com/microsoft/STL/pull/457)
 - [X] Code cleanups:
   - `src/syserror.cpp` now uses range-for and `static_cast`. [#481](https://github.com/microsoft/STL/pull/481)
   - Changed macro constants to `constexpr` variables. [#487](https://github.com/microsoft/STL/pull/487)
 
-# Late February 2020 (shipped in VS 2019 16.7)
+# Shipped in VS 2019 16.7
 - [X] Merged C++20 features:
-  - P1956R1 [#554](https://github.com/microsoft/STL/issues/554) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
   - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
+  - P1956R1 [#524](https://github.com/microsoft/STL/pull/524) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
 - [X] Merged **partial** C++20 features:
+  - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
   - P0896R4 [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
-  - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
 - [X] Merged LWG issue resolutions:
   - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
   - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
+  - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
   - LWG-3390 [#567](https://github.com/microsoft/STL/pull/567) `make_move_iterator()` cannot be used to construct a `move_iterator` for a move-only iterator
+- [X] Fixed bugs:
+  - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
+  - `<filesystem>` `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
+  - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
 - [X] Improved throughput:
@@ -86,16 +79,6 @@
   - Consistently use empty braces to construct tags like `_Meow{}`. [#497](https://github.com/microsoft/STL/pull/497)
   - Avoid declaring multiple variables on a single line. [#550](https://github.com/microsoft/STL/pull/550)
   - Removed comment now that `to_address()` is now totally `constexpr`. [#568](https://github.com/microsoft/STL/pull/568)
-
-# March 2020 (shipped in VS 2019 16.7)
-
-- [X] Merged LWG issue resolutions:
-  - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
-- [X] Fixed bugs:
-  - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
-  - `<filesystem>` `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
-  - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
-- [X] Code cleanups:
   - Consistently use `__cpp_lib_byte` to detect whether `std::byte` is available. [#577](https://github.com/microsoft/STL/pull/577)
   - Replaced `_STATIC_UNLESS_PURE` with `static`. (This was a macro workaround for a compiler bug that was fixed.) [#584](https://github.com/microsoft/STL/pull/584)
 
