@@ -56,6 +56,7 @@
 
 # Shipped in VS 2019 16.7
 - [X] Merged C++20 features:
+  - P0476R2 [#583](https://github.com/microsoft/STL/pull/583) `<bit>` `bit_cast`
   - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
   - P1956R1 [#524](https://github.com/microsoft/STL/pull/524) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
   - P1964R2 [#565](https://github.com/microsoft/STL/pull/565) Replacing `boolean` With _`boolean-testable`_
