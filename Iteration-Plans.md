@@ -64,6 +64,7 @@
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
 - [X] Merged LWG issue resolutions:
   - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
+  - LWG-3326 [#588](https://github.com/microsoft/STL/pull/588) `enable_view` has false positives
   - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
   - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
   - LWG-3335 [#514](https://github.com/microsoft/STL/pull/514) Addition of `range_size_t` to `<ranges>`
