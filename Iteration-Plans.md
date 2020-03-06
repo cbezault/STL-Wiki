@@ -66,6 +66,7 @@
   - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
   - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
   - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
+  - LWG-3335 [#514](https://github.com/microsoft/STL/pull/514) Addition of `range_size_t` to `<ranges>`
   - LWG-3390 [#567](https://github.com/microsoft/STL/pull/567) `make_move_iterator()` cannot be used to construct a `move_iterator` for a move-only iterator
 - [X] Fixed bugs:
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
