@@ -58,16 +58,22 @@
 - [X] Merged C++20 features:
   - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
   - P1956R1 [#524](https://github.com/microsoft/STL/pull/524) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
+  - P1964R2 [#565](https://github.com/microsoft/STL/pull/565) Replacing `boolean` With _`boolean-testable`_
+  - P2091R0 [#565](https://github.com/microsoft/STL/pull/565) Fixing Issues With Range Access CPOs
+  - P2102R0 [#565](https://github.com/microsoft/STL/pull/565) Making "Implicit Expression Variations" More Explicit
 - [X] Merged **partial** C++20 features:
   - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
   - P0896R4 [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
+  - P0896R4 [#565](https://github.com/microsoft/STL/pull/565) Ranges again; includes algorithms `ranges::all_of`, `ranges::any_of`, `ranges::copy`, `ranges::copy_if`, `ranges::copy_n`, `ranges::count`, `ranges::count_if`, `ranges::equal`, `ranges::find`, `ranges::find_if`, `ranges::find_if_not`, `ranges::for_each`, `ranges::for_each_n`, `ranges::mismatch`, and `ranges::none_of`.
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
 - [X] Merged LWG issue resolutions:
+  - LWG-3194 [#565](https://github.com/microsoft/STL/pull/565) `ConvertibleTo` prose does not match code
   - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
   - LWG-3326 [#588](https://github.com/microsoft/STL/pull/588) `enable_view` has false positives
   - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
   - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
   - LWG-3335 [#514](https://github.com/microsoft/STL/pull/514) Addition of `range_size_t` to `<ranges>`
+  - LWG-3379 [#565](https://github.com/microsoft/STL/pull/565) "`safe`" in several library names is misleading
   - LWG-3390 [#567](https://github.com/microsoft/STL/pull/567) `make_move_iterator()` cannot be used to construct a `move_iterator` for a move-only iterator
 - [X] Fixed bugs:
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
