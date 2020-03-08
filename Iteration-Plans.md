@@ -60,15 +60,19 @@
   - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
   - P1956R1 [#524](https://github.com/microsoft/STL/pull/524) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
   - P1964R2 [#565](https://github.com/microsoft/STL/pull/565) Replacing `boolean` With _`boolean-testable`_
+  - P1976R2 [#500](https://github.com/microsoft/STL/pull/500) Explicit Constructors For Fixed-Extent `span` From Dynamic-Extent Ranges
   - P2091R0 [#565](https://github.com/microsoft/STL/pull/565) Fixing Issues With Range Access CPOs
   - P2102R0 [#565](https://github.com/microsoft/STL/pull/565) Making "Implicit Expression Variations" More Explicit
+  - P2116R0 [#587](https://github.com/microsoft/STL/pull/587) Removing `tuple`-Like Protocol Support From Fixed-Extent `span`
 - [X] Merged **partial** C++20 features:
+  - P0768R1 [#515](https://github.com/microsoft/STL/pull/515) Library Support For The Spaceship Comparison Operator `<=>`; includes `lexicographical_compare_three_way`.
   - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
   - P0896R4 [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
   - P0896R4 [#565](https://github.com/microsoft/STL/pull/565) Ranges again; includes algorithms `ranges::all_of`, `ranges::any_of`, `ranges::copy`, `ranges::copy_if`, `ranges::copy_n`, `ranges::count`, `ranges::count_if`, `ranges::equal`, `ranges::find`, `ranges::find_if`, `ranges::find_if_not`, `ranges::for_each`, `ranges::for_each_n`, `ranges::mismatch`, and `ranges::none_of`.
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
 - [X] Merged LWG issue resolutions:
   - LWG-3194 [#565](https://github.com/microsoft/STL/pull/565) `ConvertibleTo` prose does not match code
+  - LWG-3255 [#506](https://github.com/microsoft/STL/pull/506) `span`'s `array` constructor is too strict
   - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
   - LWG-3326 [#588](https://github.com/microsoft/STL/pull/588) `enable_view` has false positives
   - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
