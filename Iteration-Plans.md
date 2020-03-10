@@ -69,6 +69,7 @@
   - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
   - P0896R4 [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
   - P0896R4 [#565](https://github.com/microsoft/STL/pull/565) Ranges again; includes algorithms `ranges::all_of`, `ranges::any_of`, `ranges::copy`, `ranges::copy_if`, `ranges::copy_n`, `ranges::count`, `ranges::count_if`, `ranges::equal`, `ranges::find`, `ranges::find_if`, `ranges::find_if_not`, `ranges::for_each`, `ranges::for_each_n`, `ranges::mismatch`, and `ranges::none_of`.
+  - P0896R4 [#589](https://github.com/microsoft/STL/pull/589) more Ranges; includes changes to `std::back_insert_iterator`, `std::front_insert_iterator`, and `std::insert_iterator` necessary to model the Ranges iterator concepts.
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
 - [X] Merged LWG issue resolutions:
   - LWG-3194 [#565](https://github.com/microsoft/STL/pull/565) `ConvertibleTo` prose does not match code
