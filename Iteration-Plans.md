@@ -58,6 +58,7 @@
 - [X] Merged C++20 features:
   - P0476R2 [#583](https://github.com/microsoft/STL/pull/583) `<bit>` `bit_cast`
   - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
+  - P1871R1 [#607](https://github.com/microsoft/STL/pull/607) `disable_sized_sentinel_for`; renames `disable_sized_sentinel` to `disable_sized_sentinel_for`.
   - P1956R1 [#524](https://github.com/microsoft/STL/pull/524) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
   - P1964R2 [#565](https://github.com/microsoft/STL/pull/565) Replacing `boolean` With _`boolean-testable`_
   - P1976R2 [#500](https://github.com/microsoft/STL/pull/500) Explicit Constructors For Fixed-Extent `span` From Dynamic-Extent Ranges
