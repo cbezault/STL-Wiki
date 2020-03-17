@@ -42,6 +42,17 @@
   - P1165R1 [#467](https://github.com/microsoft/STL/pull/467) Consistently Propagating Stateful Allocators In `basic_string`'s `operator+()`
   - P1423R3 [#470](https://github.com/microsoft/STL/pull/470) `char8_t` Backward Compatibility Remediation
   - P1645R1 [#399](https://github.com/microsoft/STL/pull/399) `constexpr` For `<numeric>` Algorithms
+  - P1964R2 [#565](https://github.com/microsoft/STL/pull/565) Replacing `boolean` With _`boolean-testable`_
+  - P2091R0 [#565](https://github.com/microsoft/STL/pull/565) Fixing Issues With Range Access CPOs
+  - P2102R0 [#565](https://github.com/microsoft/STL/pull/565) Making "Implicit Expression Variations" More Explicit
+- [X] Merged **partial** C++20 features:
+  - P0896R4 [#565](https://github.com/microsoft/STL/pull/565) Ranges; includes algorithms `ranges::all_of`, `ranges::any_of`, `ranges::copy`, `ranges::copy_if`, `ranges::copy_n`, `ranges::count`, `ranges::count_if`, `ranges::equal`, `ranges::find`, `ranges::find_if`, `ranges::find_if_not`, `ranges::for_each`, `ranges::for_each_n`, `ranges::mismatch`, and `ranges::none_of`.
+  - P0896R4 [#589](https://github.com/microsoft/STL/pull/589) more Ranges; includes changes to `std::back_insert_iterator`, `std::front_insert_iterator`, and `std::insert_iterator` necessary to model the Ranges iterator concepts.
+- [X] Merged LWG issue resolutions:
+  - LWG-3194 [#565](https://github.com/microsoft/STL/pull/565) `ConvertibleTo` prose does not match code
+  - LWG-3326 [#588](https://github.com/microsoft/STL/pull/588) `enable_view` has false positives
+  - LWG-3335 [#514](https://github.com/microsoft/STL/pull/514) Addition of `range_size_t` to `<ranges>`
+  - LWG-3379 [#565](https://github.com/microsoft/STL/pull/565) "`safe`" in several library names is misleading
 - [X] Added test suites (not yet running):
   - `tests/tr1` [#485](https://github.com/microsoft/STL/pull/485)
   - `tests/std` [#498](https://github.com/microsoft/STL/pull/498)
@@ -60,33 +71,24 @@
   - P1115R3 [#566](https://github.com/microsoft/STL/pull/566) `erase()`/`erase_if()` Return `size_type`
   - P1871R1 [#607](https://github.com/microsoft/STL/pull/607) `disable_sized_sentinel_for`; renames `disable_sized_sentinel` to `disable_sized_sentinel_for`.
   - P1956R1 [#524](https://github.com/microsoft/STL/pull/524) `<bit>` `has_single_bit()`, `bit_ceil()`, `bit_floor()`, `bit_width()`
-  - P1964R2 [#565](https://github.com/microsoft/STL/pull/565) Replacing `boolean` With _`boolean-testable`_
   - P1976R2 [#500](https://github.com/microsoft/STL/pull/500) Explicit Constructors For Fixed-Extent `span` From Dynamic-Extent Ranges
-  - P2091R0 [#565](https://github.com/microsoft/STL/pull/565) Fixing Issues With Range Access CPOs
-  - P2102R0 [#565](https://github.com/microsoft/STL/pull/565) Making "Implicit Expression Variations" More Explicit
   - P2116R0 [#587](https://github.com/microsoft/STL/pull/587) Removing `tuple`-Like Protocol Support From Fixed-Extent `span`
 - [X] Merged **partial** C++20 features:
   - P0768R1 [#515](https://github.com/microsoft/STL/pull/515) Library Support For The Spaceship Comparison Operator `<=>`; includes `lexicographical_compare_three_way`.
   - P0784R7 [#501](https://github.com/microsoft/STL/pull/501) Library Support For More `constexpr` Containers; includes `construct_at`.
   - P0896R4 [#385](https://github.com/microsoft/STL/pull/385) Ranges; includes function objects `ranges::equal_to`, `ranges::not_equal_to`, `ranges::less`, `ranges::less_equal`, `ranges::greater`, and `ranges::greater_equal`.
-  - P0896R4 [#565](https://github.com/microsoft/STL/pull/565) Ranges again; includes algorithms `ranges::all_of`, `ranges::any_of`, `ranges::copy`, `ranges::copy_if`, `ranges::copy_n`, `ranges::count`, `ranges::count_if`, `ranges::equal`, `ranges::find`, `ranges::find_if`, `ranges::find_if_not`, `ranges::for_each`, `ranges::for_each_n`, `ranges::mismatch`, and `ranges::none_of`.
-  - P0896R4 [#589](https://github.com/microsoft/STL/pull/589) more Ranges; includes changes to `std::back_insert_iterator`, `std::front_insert_iterator`, and `std::insert_iterator` necessary to model the Ranges iterator concepts.
   - P1614R2 [#385](https://github.com/microsoft/STL/pull/385) Adding Spaceship `<=>` To The Library; includes concepts `three_way_comparable` and `three_way_comparable_with`, type trait `compare_three_way_result` (with `_t` variant), and function object `compare_three_way`.
 - [X] Merged LWG issue resolutions:
-  - LWG-3194 [#565](https://github.com/microsoft/STL/pull/565) `ConvertibleTo` prose does not match code
   - LWG-3255 [#506](https://github.com/microsoft/STL/pull/506) `span`'s `array` constructor is too strict
   - LWG-3320 [#548](https://github.com/microsoft/STL/pull/548) `span::cbegin/cend` methods produce different results than `std::[ranges::]cbegin/cend`
-  - LWG-3326 [#588](https://github.com/microsoft/STL/pull/588) `enable_view` has false positives
   - LWG-3329 [#512](https://github.com/microsoft/STL/pull/512) `totally_ordered_with` both directly and indirectly requires `common_reference_with`
   - LWG-3330 [#513](https://github.com/microsoft/STL/pull/513) Include `<compare>` from most library headers
-  - LWG-3335 [#514](https://github.com/microsoft/STL/pull/514) Addition of `range_size_t` to `<ranges>`
-  - LWG-3379 [#565](https://github.com/microsoft/STL/pull/565) "`safe`" in several library names is misleading
   - LWG-3390 [#567](https://github.com/microsoft/STL/pull/567) `make_move_iterator()` cannot be used to construct a `move_iterator` for a move-only iterator
 - [X] Fixed bugs:
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
   - `<filesystem>` `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
   - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
-  - The Cmake release build now correctly uses the compiler flags in `VCLIBS_RELEASE_OPTIONS`. [#608](https://github.com/microsoft/STL/pull/610/files)
+  - The CMake release build now correctly uses the compiler flags in `VCLIBS_RELEASE_OPTIONS`. [#608](https://github.com/microsoft/STL/pull/610/files)
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
   - Removed layers of calls to helpers and `std::forward` in `std::invoke`. [#585](https://github.com/microsoft/STL/pull/585)
