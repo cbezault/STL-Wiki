@@ -88,6 +88,7 @@
   - `operator/` and `operator%` for `chrono::duration` now properly SFINAE away when `common_type_t<Rep1, Rep2>` can't be formed. [#573](https://github.com/microsoft/STL/pull/573)
   - `<filesystem>` `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
   - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
+  - `<filesystem>` now considers `ERROR_BAD_NETPATH` as a "file does not exist" condition. [#616](https://github.com/microsoft/STL/pull/616)
   - The CMake release build now correctly uses the compiler flags in `VCLIBS_RELEASE_OPTIONS`. [#608](https://github.com/microsoft/STL/pull/610/files)
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
