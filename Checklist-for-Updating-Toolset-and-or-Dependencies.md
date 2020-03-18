@@ -5,4 +5,4 @@
 * Create a pull request with the updated `README.md` and `azure-devops/provision-agent.ps1`, and merge that into `master`.
 * Delete all the agents from Azure Pipelines on https://dev.azure.com/vclibs/STL/_settings/agentqueues?queueId=19&view=agents
 * Recycle all the VMs in the virtual machine scale set "MSVCSTL-BUILD". They will automatically pick up the updated `provision-agent.ps1` and the new VMs will have updated dependencies installed.
-* Create a pull request that updates the the `vcpkg` submodule and merge that to `master`.
+* Create a pull request that updates the `vcpkg` submodule and merge that to `master`.
