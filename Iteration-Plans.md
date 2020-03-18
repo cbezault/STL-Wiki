@@ -89,7 +89,8 @@
   - `<filesystem>` `directory_iterator` now properly handles `"."` and `".."` on network drives. [#494](https://github.com/microsoft/STL/pull/494)
   - `<filesystem>` `space` no longer requires read permissions for every directory along the path in some cases, and resolves symbolic links. [#552](https://github.com/microsoft/STL/pull/552)
   - `<filesystem>` now considers `ERROR_BAD_NETPATH` as a "file does not exist" condition. [#616](https://github.com/microsoft/STL/pull/616)
-  - The CMake release build now correctly uses the compiler flags in `VCLIBS_RELEASE_OPTIONS`. [#608](https://github.com/microsoft/STL/pull/610/files)
+  - The CMake release build now correctly uses the compiler flags in `VCLIBS_RELEASE_OPTIONS`. [#608](https://github.com/microsoft/STL/pull/610)
+  - Enabled the implementation of LWG-2899 in `/clr` mode now that the fix for the compiler bug triggered by such (VSO-1006185) has been released. [#417](https://github.com/microsoft/STL/pull/417)
 - [X] Improved performance:
   - Massively improved the performance of `<system_error>` by avoiding the need for synchronization when constructing error categories. [#529](https://github.com/microsoft/STL/pull/529)
   - Removed layers of calls to helpers and `std::forward` in `std::invoke`. [#585](https://github.com/microsoft/STL/pull/585)
