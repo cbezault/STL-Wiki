@@ -1,4 +1,4 @@
-* Check for new versions of each of the components listed near the top of `azure-devops/provision-agent.ps1`.
+* Check for new versions of each of the components listed near the top of `azure-devops/provision-agent.ps1` (except for LLVM, which should be locked to the version required in `<yvals_core.h>`).
 * Edit that file to point to the new dependency versions, and update `README.md`.
 * Test that the updated `azure-devops/provision-agent.ps1` correctly sets up all the new dependencies in a temporary Windows Server 2019 VM.
 * Disable the other agents in Azure Pipelines and manually queue a build of `master` such that the temporary VM is used to build. This ensures that the new dependencies don't break the build.
