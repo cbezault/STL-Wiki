@@ -10,7 +10,7 @@
 # When Closing Issues (Bugs, Enhancements, Features, LWG)
 
 * In addition to closing the issue, tag it as `fixed` (and remove `work in progress` if that was present). Leave the other tags unchanged. We use `fixed` to mark issues that were solved via commits, as opposed to being `resolved` without a commit.
-* Update the wiki's [Iteration Plans](https://github.com/microsoft/STL/wiki/Iteration-Plans).
+* Update the wiki's [Changelog](https://github.com/microsoft/STL/wiki/Changelog).
 
 # When Adding Features (Or LWG Issues)
 
